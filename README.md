@@ -12,4 +12,5 @@ Header: ProdSans
 Paragraph: Lora, Segoe
 
 ProdSans + Segoe: downloaded .ttf and .woff files in '{root}/css/font', imported in fontello.css
+
 Lora: Google Fonts, imported in header
