@@ -77,6 +77,8 @@
 .icon-twitter:before { content: '\f302'; } /* '' */
 .icon-instagram-filled:before { content: '\f31f'; } /* '' */
 
+/* using @font-face to import ProdSans and Segoe */
+
 @font-face {
   font-family: 'ProdSans';
   src: url('font/prodsans.ttf') format('truetype');

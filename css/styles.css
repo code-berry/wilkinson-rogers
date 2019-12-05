@@ -322,7 +322,8 @@ footer h6 {
 
 #footer-bottom {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     width: 100%;
     padding: 10px 0 10px 10%;
@@ -331,8 +332,8 @@ footer h6 {
 }
 
 footer {
-		padding-bottom: 0;
-}	
+	padding-bottom: 0;
+}
 
 #social-icon-holder {
 	width: 200px;
