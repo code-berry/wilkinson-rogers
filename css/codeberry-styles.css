@@ -1,0 +1,197 @@
+
+.str-dark-blue {
+	color: #083863;
+}
+
+.logo-light-blue {
+	color: #0B8FCD;
+}
+
+.logo-strong-red {
+	color: #DC3030;
+}
+
+.light-baby-blue {
+	color: #BBE8FD;
+}
+
+.reddish-color {
+	color: #FE4C4C;
+}
+
+.turqoise {
+	color: #28CA9A;
+}
+
+.dark-colo {
+	color: #2B2D2C;
+}
+
+.faf {
+	color: #f4f0f0;
+}
+
+.light-grey {
+	color: #606060;
+}
+
+.light-button {
+	padding: 10px 50px;
+	background-color: rgba(255,255,255,0.85);
+	border: transparent;
+	border-top-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	font-family: ProdSans;
+	font-weight: bold;
+	font-size: 20px;
+	transition: background-color 500ms ease, color 500ms ease-in;
+}
+
+.light-button:hover {
+	background-color: #dd4130;
+	color: #fafafa !important;
+}
+
+.m-mt20 {
+	margin-top: 20px !important;
+}
+
+.m-mb-40 {
+	margin-bottom: 40px !important;
+}
+
+.p100 {
+	padding-top: 100px !important;
+	padding-bottom: 100px !important;
+}
+
+.p50 {
+	padding-top: 50px !important;
+	padding-bottom: 50px !important;
+}
+
+.p20 {
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+}
+
+.w100 {
+	width: 100%;
+}
+
+.button-pop {
+	padding: 10px 20px;
+	background-color: #ffffff;
+	border: 3px solid #DC3030;
+	font-family: ProdSans;
+	font-weight: bold;
+	letter-spacing: 2px;
+	transition: background-color 500ms ease, color 500ms ease-in;
+}
+
+.button-pop:hover {
+	background-color: #DC3030;
+	color: #fafafa;
+}
+
+.button-outline {
+	position: absolute;
+	bottom: 20px;
+	padding: 10px 50px;
+	background-color: transparent;
+	border: 3px solid #DC3030;
+	color: #252525;
+	font-family: ProdSans;
+	font-size: 16px;
+	font-weight: bold;
+	transition: background-color 500ms ease, color 500ms ease-in !important;
+}
+
+.button-outline:hover {
+	background-color: #DC3030;
+	color: #fafafa;
+}
+
+.button-contrast {
+	padding: 6px 20px;
+	background-color: rgba(255,255,255,0.7);
+	border: transparent;
+	font-family: ProdSans;
+	color: #252525;
+	transition: background-color 500ms ease, color 500ms ease-in;
+}
+
+.button-mail {
+	padding: 8px 20px;
+	background-color: #233677;
+	border: transparent;
+	font-family: ProdSans;
+	color: #fafafa !important;
+	letter-spacing: 2px;
+	float: right;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+
+.dark-button {
+	padding: 10px 50px;
+	background-color: #083863;
+	border: transparent;
+	color: #fafafa;
+	font-size: 20px;
+	border: transparent;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    font-family: ProdSans;
+    font-weight: bold;
+    transition: background-color 500ms ease, color 500ms ease-in;
+}
+
+.dark-button:hover {
+	background-color: #fafafa;
+	color: #252525;
+}
+
+.fl-r80 {
+	width: 80%;
+	float: right;
+}
+
+.m-flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.fit-flex {
+	display: flex;
+	flex-direction: column;
+	width: fit-content;
+}
+
+.v-flex {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.tac {
+	text-align: center;
+}
+
+.righty {
+	float: right;
+}
+
+@media screen and (max-width : 997px) {
+	.expendable {
+		display: none;
+	}
+}
