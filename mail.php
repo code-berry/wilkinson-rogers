@@ -1,34 +1,53 @@
-<?php
-	// check content, won't fail if null
-	if(isset( $_POST['name'])):
-		$name = $_POST['name'];
-	endif; 
-	if(isset( $_POST['email'])):
-		$email = $_POST['email'];
-	endif; 
-	if(isset( $_POST['message'])):
-		$message = $_POST['message'];
-	endif; 
-
-	if(isset( $_POST['subject'])):
-		$subject = $_POST['subject'];
-	endif; 
-	if(isset( $_POST['phone'])):
-		$number= $_POST['phone'];
-	endif; 
-
-	// standard content display
-	$content="From: $name \n Phone: $phone \n Email: $email \n Message: $message";
-
-	// recipient addresses
-	// will accept a string seperated by commas
-	// ie $rec_list = "something@one.com, someelse@two.com"
-	$recipient = "office@wilkinsonrogers.com";
-	$mailheader = "From: $email \r\n";
-
-	// builtin mail function
-	mail($recipient, $subject, $content, $mailheader) or die("Error!");
-	
-	// redirect link
-	header("Location: https://www.wilkinsonrogers.com/emailsuccess.html");
-?>
+<?php if(isset($_POST['email'])) {
+ 
+    // EDIT THE 2 LINES BELOW AS REQUIRED
+    $email_to = "office@wilkinsonrogers.com, adrienne@wilkinsonrogers.com";
+    $email_subject = "Contact Form from www.wilkinsonrogers.com";
+ 
+    function died($error) {
+        // error goes here, but basic form validation is done in window anyways
+        echo "We are very sorry, but there were error(s) found with the form you submitted. ";
+        echo "These errors appear below.<br /><br />";
+        echo $error."<br /><br />";
+        echo "Please go back and fix these errors.<br /><br />";
+        die();
+    }
+ 
+    $name = $_POST['name']; // required
+    $email_from = $_POST['email']; // required
+    $telephone = $_POST['phone']; // not required
+    $message = $_POST['message']; // required
+ 
+    $error_message = "";
+    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+ 
+	if(!preg_match($email_exp,$email_from)) {
+		$error_message .= 'The Email Address you entered does not appear to be valid.<br />';
+	}
+ 
+	$string_exp = "/^[A-Za-z .'-]+$/";
+ 
+	if(strlen($error_message) > 0) {
+		died($error_message);
+	}
+ 
+    $email_message = "Form details below:\n\n";
+ 
+     
+    function clean_string($string) {
+      $bad = array("content-type","bcc:","to:","cc:","href");
+      return str_replace($bad,"",$string);
+    }
+ 
+    $email_message .= "Name: ".clean_string($name)."\n";
+    $email_message .= "Email: ".clean_string($email_from)."\n";
+    $email_message .= "Telephone: ".clean_string($telephone)."\n";
+    $email_message .= "message: ".clean_string($message)."\n";
+ 
+	// create email headers
+	$headers = 'From: '.$email_from."\r\n".
+	'Reply-To: '.$email_from."\r\n" .
+	'X-Mailer: PHP/' . phpversion();
+	@mail($email_to, $email_subject, $email_message, $headers);
+    header("Location: http://www.wilkinsonrogers.com/emailsuccess.html");
+}
